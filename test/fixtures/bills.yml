@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body: MyString
+  title: MyString
+  history: MyString
+  email: MyString
+  voting_date: 2019-12-12
+  status: MyString
+  website: MyString
+
+two:
+  body: MyString
+  title: MyString
+  history: MyString
+  email: MyString
+  voting_date: 2019-12-12
+  status: MyString
+  website: MyString

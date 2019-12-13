@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_015132) do
+ActiveRecord::Schema.define(version: 2019_12_13_022602) do
 
   create_table "bill_votes", force: :cascade do |t|
     t.integer "bill_id"
     t.integer "user_state_id"
     t.boolean "thumbs_up"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bills", force: :cascade do |t|
+    t.string "body"
+    t.string "title"
+    t.string "history"
+    t.string "email"
+    t.date "voting_date"
+    t.string "status"
+    t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

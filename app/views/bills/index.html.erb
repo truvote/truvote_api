@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Title</th>
+      <th>History</th>
+      <th>Email</th>
+      <th>Voting date</th>
+      <th>Status</th>
+      <th>Website</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bills.each do |bill| %>
+      <tr>
+        <td><%= bill.body %></td>
+        <td><%= bill.title %></td>
+        <td><%= bill.history %></td>
+        <td><%= bill.email %></td>
+        <td><%= bill.voting_date %></td>
+        <td><%= bill.status %></td>
+        <td><%= bill.website %></td>
+        <td><%= link_to 'Show', bill %></td>
+        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
+        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bill', new_bill_path %>
