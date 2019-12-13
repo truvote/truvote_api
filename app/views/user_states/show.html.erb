@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_state.user_id %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @user_state.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @user_state.end_date %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @user_state.role %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @user_state.district_id %>
+</p>
+
+<%= link_to 'Edit', edit_user_state_path(@user_state) %> |
+<%= link_to 'Back', user_states_path %>

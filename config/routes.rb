@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_states
   resources :bill_votes
   resources :builds
   resources :representative_profiles
