@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
 
   # POST /login
   def create
+    # render 'new'
   end
 
   # DELETE /login
