@@ -10,30 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_005224) do
+ActiveRecord::Schema.define(version: 2019_12_13_015132) do
 
   create_table "bill_votes", force: :cascade do |t|
     t.integer "bill_id"
-    t.integer "user_id"
-    t.integer "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "builds", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_state_id"
+    t.boolean "thumbs_up"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "constituent_profiles", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_state_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "representative_profiles", force: :cascade do |t|
+    t.integer "user_state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_states", force: :cascade do |t|
     t.integer "user_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "role"
+    t.integer "district_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
