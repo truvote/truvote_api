@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :builds
   resources :representative_profiles
   resources :constituent_profiles
   resources :users
