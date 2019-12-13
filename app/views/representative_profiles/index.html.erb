@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Representative Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @representative_profiles.each do |representative_profile| %>
+      <tr>
+        <td><%= representative_profile.user_id %></td>
+        <td><%= link_to 'Show', representative_profile %></td>
+        <td><%= link_to 'Edit', edit_representative_profile_path(representative_profile) %></td>
+        <td><%= link_to 'Destroy', representative_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Representative Profile', new_representative_profile_path %>
