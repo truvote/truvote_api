@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bill:</strong>
+  <%= @bill_vote.bill_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bill_vote.user_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @bill_vote.amount %>
+</p>
+
+<%= link_to 'Edit', edit_bill_vote_path(@bill_vote) %> |
+<%= link_to 'Back', bill_votes_path %>

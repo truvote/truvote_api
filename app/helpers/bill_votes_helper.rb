@@ -1,0 +1,2 @@
+module BillVotesHelper
+end
