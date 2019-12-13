@@ -1,0 +1,2 @@
+class ConstituentProfile < ApplicationRecord
+end
