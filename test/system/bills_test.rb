@@ -15,7 +15,6 @@ class BillsTest < ApplicationSystemTestCase
     click_on "New Bill"
 
     fill_in "Body", with: @bill.body
-    fill_in "Email", with: @bill.email
     fill_in "History", with: @bill.history
     fill_in "Status", with: @bill.status
     fill_in "Title", with: @bill.title
