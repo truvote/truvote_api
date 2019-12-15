@@ -24,10 +24,12 @@ ActiveRecord::Schema.define(version: 2019_12_13_025434) do
     t.string "body"
     t.string "title"
     t.string "history"
-    t.string "email"
     t.date "voting_date"
     t.string "status"
     t.string "website"
+    t.string "pros"
+    t.string "cons"
+    t.integer "user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

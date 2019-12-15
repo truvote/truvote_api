@@ -4,10 +4,12 @@ class CreateBills < ActiveRecord::Migration[5.2]
       t.string :body
       t.string :title
       t.string :history
-      t.string :email
       t.date :voting_date
       t.string :status
       t.string :website
+      t.string :pros
+      t.string :cons
+      t.integer :user
 
       t.timestamps
     end
