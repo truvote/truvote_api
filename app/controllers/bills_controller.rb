@@ -1,5 +1,6 @@
 class BillsController < ApplicationController
   before_action :set_bill, only: [:show, :edit, :update, :destroy]
+  before_action :assert_is_representative, only: [:edit, :update, :new, :destroy]
 
   # GET /bills
   # GET /bills.json
