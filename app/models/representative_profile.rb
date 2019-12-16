@@ -1,2 +1,0 @@
-class RepresentativeProfile < ApplicationRecord
-end
