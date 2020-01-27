@@ -2,18 +2,18 @@ module Api
   module V1
     class BillsController < ApplicationController
       before_action :set_bill, only: [:show, :edit, :update, :destroy]
-      before_action :assert_is_representative, only: [:edit, :update, :new, :destroy]
+      # before_action :assert_is_representative, only: [:edit, :update, :new, :destroy]
     
       # GET /bills
       # GET /bills.json
       def index
-        return render json: {foo: "bills controller"}
-        @bills = Bill.all
+        render json: Bill.all
       end
     
       # GET /bills/1
       # GET /bills/1.json
       def show
+        render json: @bill
       end
     
       # GET /bills/new
@@ -21,47 +21,36 @@ module Api
         @bill = Bill.new
       end
     
-      # GET /bills/1/edit
-      def edit
-      end
-    
       # POST /bills
       # POST /bills.json
       def create
         @bill = Bill.new(bill_params)
-    
-        respond_to do |format|
-          if @bill.save
-            format.html { redirect_to @bill, notice: 'Bill was successfully created.' }
-            format.json { render :show, status: :created, location: @bill }
-          else
-            format.html { render :new }
-            format.json { render json: @bill.errors, status: :unprocessable_entity }
-          end
+        
+        if @bill.save
+          render json: { bill: @bill }, status: :ok
+        else
+          render json: { errors: @bill.errors, status: 501 }
         end
       end
     
       # PATCH/PUT /bills/1
       # PATCH/PUT /bills/1.json
       def update
-        respond_to do |format|
-          if @bill.update(bill_params)
-            format.html { redirect_to @bill, notice: 'Bill was successfully updated.' }
-            format.json { render :show, status: :ok, location: @bill }
-          else
-            format.html { render :edit }
-            format.json { render json: @bill.errors, status: :unprocessable_entity }
-          end
+        binding.pry
+        if @bill.update(bill_params)
+          render json: { bill: @bill }, status: :ok
+        else
+          render json: { errors: @bill.errors, status: 501 }
         end
       end
     
       # DELETE /bills/1
       # DELETE /bills/1.json
       def destroy
-        @bill.destroy
-        respond_to do |format|
-          format.html { redirect_to bills_url, notice: 'Bill was successfully destroyed.' }
-          format.json { head :no_content }
+        if @bill.destroy
+          render status: 200
+        else
+          render json: { errors: @bill.errors }, status: 501
         end
       end
     
