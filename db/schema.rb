@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_073910) do
-
-  create_table "bill_votes", force: :cascade do |t|
-    t.integer "bill_id"
-    t.integer "user_state_id"
-    t.boolean "thumbs_up"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2020_01_27_025744) do
 
   create_table "bills", force: :cascade do |t|
     t.string "body"
@@ -34,28 +26,6 @@ ActiveRecord::Schema.define(version: 2019_12_15_073910) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "constituent_profiles", force: :cascade do |t|
-    t.integer "user_state_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "representative_profiles", force: :cascade do |t|
-    t.integer "user_state_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_states", force: :cascade do |t|
-    t.integer "user_id"
-    t.date "start_date"
-    t.date "end_date"
-    t.string "role"
-    t.integer "district_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -64,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_073910) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "votes", force: :cascade do |t|
