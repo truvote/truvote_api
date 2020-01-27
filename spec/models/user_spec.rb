@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
 
                 it "raises an invalid password error" do
                     # due to length of the password
-                    expect { user.save }.to raise_error
+                    expect { user.save }.to raise_error(ActiveRecord::RecordInvalid)
                 end
             end
 
@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
                 let(:password) { "1234567" }
 
                 it "raises an invalid password error" do
-                    expect { user.save }.to raise_error
+                    expect { user.save }.to raise_error(ActiveRecord::RecordInvalid)
                 end
             end
 
@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
                 let(:password) { "abcdefghijklmnop" }
 
                 it "raises an invalid password error" do
-                    expect { user.save }.to raise_error
+                    expect { user.save }.to raise_error(ActiveRecord::RecordInvalid)
                 end
             end
 
@@ -34,7 +34,7 @@ RSpec.describe User, type: :model do
                 let(:password) { "ABCDEFGHIJK" }
 
                 it "raises an invalid password error" do
-                    expect { user.save }.to raise_error
+                    expect { user.save }.to raise_error(ActiveRecord::RecordInvalid)
                 end
             end
         end
