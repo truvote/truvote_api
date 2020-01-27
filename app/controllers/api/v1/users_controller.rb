@@ -23,7 +23,7 @@ module Api
         if @user.save
           render json: @user, status: :ok
         else
-          render json: { status: 501 }
+          render json: { errors: @user.errors }, status: 501
         end
       end
     
@@ -33,7 +33,7 @@ module Api
         if @user.update(user_params)
           render json: @user, status: :ok
         else
-          render json: { status: 501 }
+          render json: { errors: @user.errors, status: 501 }
         end
       end
     
@@ -43,7 +43,7 @@ module Api
         if @user.destroy
           render json: { status: 200 }
         else
-          render json: { status: 501 }
+          render json: { errors: @user.errors, status: 501 }
         end
       end
     

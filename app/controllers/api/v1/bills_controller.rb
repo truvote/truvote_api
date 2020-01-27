@@ -36,7 +36,6 @@ module Api
       # PATCH/PUT /bills/1
       # PATCH/PUT /bills/1.json
       def update
-        binding.pry
         if @bill.update(bill_params)
           render json: { bill: @bill }, status: :ok
         else
