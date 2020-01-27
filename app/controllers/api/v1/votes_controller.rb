@@ -6,7 +6,6 @@ module Api
       # GET /votes
       # GET /votes.json
       def index
-        return render json: {foo: "votes page"}
         @votes = Vote.all
       end
     
