@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 ## CUSTOM GEMS
 gem "rspec-rails", :group => [:development, :test]
+gem 'factory_bot', :group => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
